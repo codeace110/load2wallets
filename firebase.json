@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": ".",
+    "site": "load2wallet",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
