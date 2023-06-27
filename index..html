@@ -56,6 +56,18 @@
   <script src="js/main.js"></script>
   
   <!---Nav Start Here-->
+  <!-- Navbar MOBILE-->
+  <!-- <nav class="nav nav-mobile navbar-expand-lg navbar-light bg-light">
+    <div class="container mobile-nav-container">
+      <a class="navbar-brand " href=""><i style="color: rgb(0, 110, 255);" class="fa-solid fa-house"></i></a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item" id="login-main">
+          <a href="login.html" style="text-decoration: none;"><img class="login-img" src="img/tl.webp" alt=""></a>
+        </li>
+      </ul>
+
+    </div>
+  </nav> -->
   <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
@@ -67,7 +79,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <form class="d-flex search-bar-main" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-primary" type="submit">Search</button>
       </form>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -79,10 +91,8 @@
         <li class="nav-item">
           <a class="nav-link" href="#contact">Contact</a>
         </li>
-        <li class="nav-item">
-          <button class="nav-link login-button" type="button">
-            <i class="fa-solid fa-user-circle"></i>LOGIN
-          </button>
+        <li class="nav-item" id="login-main">
+          <a href="login.html" style="text-decoration: none;"><img class="login-img" src="img/tl.webp" alt=""></a>
         </li>
       </ul>
     </div>
@@ -90,30 +100,162 @@
 </nav>
 <!-- Hero Section -->
 <section class="hero bg-primary text-light text-center py-5">
-  <div class="container">
-    <h1 class="display-4">Buy and Sell Loads</h1>
-    <p class="lead">Find the perfect match for your cargo needs</p>
-    <a href="#contact" class="btn btn-light btn-lg">Get Started</a>
+  <h5 class="display-3">Load2Wallet Deals!</h5>
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/carousel1.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="img/carousel2.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="img/carousel3.png" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-</section>
-
-<!-- About Section -->
-<section id="about" class="py-5">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h2>About Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget ligula laoreet, lobortis nunc at,
-          dapibus justo. Duis a quam vel lectus tristique facilisis ac id mauris. Nulla facilisi. Nullam vel fringilla
-          lacus.</p>
+        <div class="card container card-container">
+          <img class="cloud-img rocketman" src="img/rockts.webp" alt="">
+
+          <h1 class="display-4">Buy and Sell Load</h1>
+        <p class="lead">Find the perfect deals</p>
+        <div class="row table-container-main">
+          <div class="col-md-6">
+            <div class="container-table">
+              <div class="table-container">
+                  <!-- table content goes here -->
+                  <table class="rates-table">
+                    <thead>
+                      <tr>
+                        <th>Load to GCash</th>
+                        <th>Rate</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>10 LOAD</td>
+                        <td>7 GCASH</td>
+                      </tr>
+                      <tr>
+                        <td>15 LOAD</td>
+                        <td>10 GCASH</td>
+                      </tr>
+                      <tr>
+                        <td>20 LOAD</td>
+                        <td>14 GCASH</td>
+                      </tr>
+                      <tr>
+                        <td>30 LOAD</td>
+                        <td>21 GCASH</td>
+                      </tr>
+                      <tr>
+                        <td>60 LOAD</td>
+                        <td>42 GCASH</td>
+                      </tr>
+                      <tr>
+                        <td>100 LOAD</td>
+                        <td>70 GCASH</td>
+                      </tr>
+                      <tr>
+                        <td>200 LOAD</td>
+                        <td>140 GCASH</td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="container-table">
+              <div class="table-container">
+                <table class="rates-table">
+                  <thead>
+                    <tr>
+                      <th>Buy a Load</th>
+                      <th>Rate</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>8 GCASH</td>
+                      <td>10 LOAD</td>
+                    </tr>
+                    <tr>
+                      <td>12 GCASH</td>
+                      <td>15 LOAD</td>
+                    </tr>
+                    <tr>
+                      <td>15 GCASH</td>
+                      <td>20 LOAD</td>
+                    </tr>
+                    <tr>
+                      <td>25 GCASH</td>
+                      <td>30 LOAD</td>
+                    </tr>
+                    <tr>
+                      <td>50 GCASH</td>
+                      <td>60 LOAD</td>
+                    </tr>
+                    <tr>
+                      <td>80 GCASH</td>
+                      <td>100 LOAD</td>
+                    </tr>
+                    <tr>
+                      <td>170 GCASH</td>
+                      <td>200 LOAD</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="row sell-buy-btn">
+          <div class="col-md-6">
+          <a href="#contact" class="btn btn-light btn-lg deals-btn">Sell Loads</a>
+          </div>
+          <div class="col-md-6">
+           
+          <a href="#contact" class="btn btn-light btn-lg deals-btn">Buy Loads</a>
+          </div>
+
+        </div>
+        </div>
+
+
+
+
       </div>
-      <div class="col-md-6">
-        <img src="images/about.jpg" alt="About Us" class="img-fluid rounded">
+      
+      <div class="col-md-6 " >
+        <div class="container content right-side-container-hero">
+
+        </div>
+        <img class="cloud-img" src="img/clouds.webp" alt="">
+        <img class="cloud-img cloud2" src="img/cloudsnum2.webp" alt="">
+        <h1 class="display-4">Connect Anytime, Anywhere Buy and Sell Sim Card Load with Ease!</h1>
+        <p class="lead">Join our platform and unlock the potential of load exchange. Whether you're a seller looking to maximize earnings or a buyer in search of seamless connectivity, our website is the ultimate destination for all your load trading needs."</p>
+        <a href="#contact" class="btn btn-light btn-lg cards-header ">Learn More</a>
       </div>
     </div>
   </div>
 </section>
-
+<!-- Services Section -->
+<!-- Services Section -->
 <!-- Services Section -->
 <section id="services" class="bg-light py-5">
   <div class="container">
@@ -124,7 +266,7 @@
           <img src="images/service1.jpg" alt="Service 1" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">Load Matching</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p class="card-text">we provide a safe and reliable platform for buying and selling simcard loads. We understand the challenges of navigating the digital marketplace, particularly when it comes to avoiding scammers. That's why we proudly stand as a trusted intermediary, facilitating secure transactions between buyers and sellers.</p>
           </div>
         </div>
       </div>
@@ -149,6 +291,31 @@
     </div>
   </div>
 </section>
+
+<!-- About Section -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="section-title">About Us</h2>
+        <p class="section-description">Load2Wallet is your go-to platform for buying and selling load credit balance. We provide a seamless and convenient way to manage your mobile load transactions. With our user-friendly interface and reliable service, we ensure a hassle-free experience for all our users.</p>
+        <p class="section-description">Based in General Santos City, Philippines, Load2Wallet is committed to delivering exceptional service to our customers. Whether you want to purchase load credit or sell your excess balance, we've got you covered.</p>
+        <p class="section-description">Contact us at <a href="mailto:load2wallet@gmail.com">load2wallet@gmail.com</a> for any inquiries or assistance.</p>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <img src="img/aboutus.png" alt="About Us" class="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title">Our Vision</h5>
+            <p class="card-text">"Connecting people through effortless mobile load transactions."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- Contact Section -->
 <section id="contact" class="py-5">
   <div class="container">
