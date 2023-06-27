@@ -384,6 +384,18 @@
     .display-3{
       display: none;
     }
+    .service-image{
+      
+    }
+ 
+  }
+  @media (min-width: 767px) {
+
+
+    .service-image{
+      width: 100%;
+      
+    }
  
   }
 
