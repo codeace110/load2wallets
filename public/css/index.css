@@ -18,6 +18,7 @@
 
 .cloud-img{
     z-index: 4;
+    overflow: hidden;
 }
 
 .search-bar-main{
@@ -25,6 +26,8 @@
     border-radius: 80px;
 
 }
+
+
 
 .nav-link{
     font-weight: 800;
@@ -37,12 +40,7 @@
     height: 100%;
 }
 
-    /* Add custom CSS styles here */
 
-    /* Align navbar links to the right side */
-      /* Add custom CSS styles here */
-
-    /* Align navbar links to the right side */
     .navbar-nav {
       margin-left: auto;
     }
@@ -207,7 +205,9 @@
         z-index: 2;
         opacity: 1;
         width: 400px;
+
       }
+      
       
       
 /* Media Query for Mobile */
@@ -257,6 +257,7 @@
       top: 1400px;
       width: 50%; /* Adjust the width as per your preference */
       transform: translateY(10px);
+      overflow: hidden;
     }
   }
 
@@ -272,6 +273,7 @@
     opacity: 1;
     top: -50px;
     left: -60px;
+    overflow: hidden;
   }
 
   @media (max-width: 767px) {
