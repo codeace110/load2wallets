@@ -24,7 +24,20 @@ body {
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
 }
-
+.back-home{
+  width: 40px;
+}
+.baloon{
+  width: 150px;
+  position: absolute;
+   transition: transform 0.5s ease-in-out;
+}
+@media (min-width: 768px) {
+  .footer-login{
+    display: none;
+  }
+  
+}
 .user-dashboard h2 {
   margin: 0 0 30px;
   padding: 0;
@@ -260,4 +273,15 @@ small {
 
 .grid-cell:last-child {
   margin-right: 0;
+}
+
+.footer {
+  background-color: #000000a4;
+  color: #fff;
+  padding: 10px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
 }

@@ -49,16 +49,18 @@
   </style>
 </head>
 
-<body>
+<body style="background-image: url(img/loginbg.webp);">
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
   
   <!---Nav Start Here-->
+  <img class="baloon" src="img/hot air baloon.webp" alt="">
   
 
   <div class="container">
+    
     <div class="row" id="registration-div">
       <div class="login-box">
         <h2>Create an Account</h2>
@@ -94,6 +96,7 @@
     <div class="clearfix"></div>
     <div class="row" id="login-div">
       <div class="login-box">
+        <a href="index.html"><img  class="back-home" src="img/back-home.png" alt=""></a>
         <h2>Login</h2>
         <div class="user-box">
           <input class="form-control" type="email" id="email_field" name="email" id="" required="">
@@ -134,7 +137,20 @@
         </div>
       </div>
     </div>
+    <div>
+      <div class="col">
+        <div class="col-md-6">
+          <h1 class="footer-login" style="box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.568); color: rgb(141, 139, 139);">&nbsp;Load2Wallet</h1>
+
+        </div>
+
+      </div>
+    </div>
 </body>
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2023 Load2Wallet Platform. All rights reserved.</p>
+</footer>
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -185,5 +201,44 @@
   ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
 </script>
 <script src="https://www.google-analytics.com/analytics.js" async></script>
+<script>
+  // Get the balloon element
+  var balloon = document.querySelector('.baloon');
+
+  // Initial position and direction
+  var x = 0;
+  var y = 0;
+  var xDirection = 1; // Initial horizontal direction
+  var yDirection = 1; // Initial vertical direction
+
+  // Animation loop
+  function moveBalloon() {
+    // Calculate new position
+    x += 0.5 * xDirection; // Change this value to adjust horizontal speed
+    y += 0.2 * yDirection; // Change this value to adjust vertical speed
+
+    // Check for collision with screen edges
+    var maxX = window.innerWidth - balloon.clientWidth;
+    var maxY = window.innerHeight - balloon.clientHeight;
+
+    if (x > maxX || x < 0) {
+      xDirection *= -1; // Reverse horizontal direction
+    }
+
+    if (y > maxY || y < 0) {
+      yDirection *= -1; // Reverse vertical direction
+    }
+
+    // Apply new position
+    balloon.style.left = x + 'px';
+    balloon.style.top = y + 'px';
+
+    // Request the next animation frame
+    requestAnimationFrame(moveBalloon);
+  }
+
+  // Start the animation
+  moveBalloon();
+</script>
 
 </html>
