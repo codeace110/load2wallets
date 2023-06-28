@@ -58,6 +58,10 @@ body {
 .login-register-btn{
   margin-bottom: -45px;
 }
+#login-html{
+  background-image: url(/public/img/loginbg.webp);
+  background-size: cover;
+}
 
 
 
@@ -187,11 +191,11 @@ body {
 }
 
 a:hover {
-  background: #03e9f4;
+  background: #38cff546;
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
-    0 0 100px #03e9f4;
+  box-shadow: 0 0 5px #0388f4b4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 100px #033bf45b;
   text-decoration: none;
 }
 
@@ -298,13 +302,26 @@ small {
   margin-right: 0;
 }
 
-.footer {
+footer {
+  text-align: center;
   background-color: #000000a4;
+  position: absolute;
   color: #fff;
   padding: 10px;
-  position: absolute;
-  width: 100%;
+  width: 85vw;
+  margin: 0;
   bottom: 0;
-  display: flex;
-  justify-content: center;
+
+  
+}
+
+@media (max-width: 768px) {
+  footer{
+    width: 95vw;
+  }
+  .social-btn{
+    width: 50%;
+
+  }
+  
 }

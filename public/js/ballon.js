@@ -36,5 +36,3 @@
   // Start the animation
   moveBalloon();
 
-
-  

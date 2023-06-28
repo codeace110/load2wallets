@@ -12,3 +12,10 @@ function registration() {
     promise.catch((err) => errorNotification(err.message))
   }
 }
+
+function myFunction_reload() {
+  // Show the login container
+  document.getElementById("registration-div").style.display = "none";
+  document.getElementById("send-verification-div").style.display = "none";
+  document.getElementById("login-div").style.display = "block";
+}
