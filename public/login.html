@@ -12,7 +12,13 @@
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
   <link rel="manifest" href="site.webmanifest">
   <!-- Place favicon.ico in the root directory -->
-  
+
+  <!----firebase cdn-->
+  <script defer src="/__/firebase/9.23.0/firebase-app-compat.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <!-- Include the Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js"></script>
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
@@ -104,14 +110,24 @@
           <input class="form-control" type="email" id="email_field" name="email" id="" required="">
           <label>Email</label>
         </div>
-        <div class="user-box">
+        <div class="user-box" id="user-cred">
           <input class="form-control" type="password" id="password_field" name="password" required="">
           <label>Password</label>
         </div>
-        <div class="user-box">
-          
-          <a class="button" onclick="reg_account()">Register</a>
-          <a class="button shift" onclick="login()">Login</a>
+        <div class="user-box" id="social-media-login">
+          Login With
+          <div class="row container social-container">
+            <div class="col-md-6">
+              <a href="" onclick="loginWithGoogle()"><img class="facebook-ico shift"   src="img/load2wallet (1).png" alt=""></a>
+            </div>
+            <div class="col-md-6">
+              <a href=""><img class="facebook-ico" src="img/load2wallet.png" alt=""></a>
+            </div>
+          </div>
+          <div class="login-register-btn">
+            <a class="button" onclick="reg_account()">Register</a>
+            <a class="button shift" onclick="login()">Login</a>
+          </div>
         </div>
       </div>
     </div>
@@ -175,9 +191,6 @@
 <script type="text/javascript" src="./js/sendVerification.js"></script>
 <script type="text/javascript" src="./js/authState.js"></script>
 <script type="text/javascript" src="./js/ballon.js"></script>
-<script>
-  
-</script>
 
 <script>
   function registerServiceWorker() {
@@ -203,7 +216,31 @@
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 
 <script>
- 
+  var provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth()
+  .signInWithPopup(provider)
+  .then((result) => {
+    /** @type {firebase.auth.OAuthCredential} */
+    var credential = result.credential;
+
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    // IdP data available in result.additionalUserInfo.profile.
+      // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
+
 </script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0" nonce="nWLqe5B2"></script>
 
 </html>

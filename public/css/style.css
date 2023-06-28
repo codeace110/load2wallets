@@ -41,6 +41,24 @@ body {
   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.568);
   color: rgb(141, 139, 139);
 }
+.social-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.fb-login-button{
+  margin: 10px 0px 10px 8px;
+  margin-bottom: -20px;
+}
+.facebook-ico{
+  border-radius: 45px;
+  width: 130px;
+}
+
+.login-register-btn{
+  margin-bottom: -45px;
+}
+
 
 
 .user-dashboard h2 {
