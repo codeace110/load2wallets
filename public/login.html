@@ -54,6 +54,9 @@
     }
   </style>
 </head>
+<div id="loading">
+  <img src="img/Skateboarding.gif" alt="Loading...">
+</div>
 
 <body id="login-html">
   <h1 class="web-view-logo">Load2wallet</h1>
@@ -131,18 +134,18 @@
       </div>
     </div>
     <div class="clearfix"></div>
-    <div class="row" id="user-div">
+    <!-- <div class="row" id="user-div">
       <div class="user-dashboard">
         <div class="grid-row">
           <div class="grid-cell">
-            <h1>Welcome!</h1> <!-- Display username here -->
+            <h1>Welcome!</h1> 
             <p>You are currently logged in as <span id="user_para"><h1id="user_para"></h1></span>.</p>
           </div>
         </div>
         <a class="button shift" href="#open-modal">Settings</a>
         <a class="button shift" onclick="logout()">Logout</a>
       </div>
-    </div>
+    </div> -->
     <div id="open-modal" class="modal-window">
       <div>
         <div class="login-box">
@@ -208,24 +211,53 @@
   registerServiceWorker();
 </script>
 <script>
-var provider = new firebase.auth.GoogleAuthProvider();
-firebase.auth()
-  .signInWithPopup(provider)
+  // Function to show the loading GIF
+  function showLoading() {
+    document.getElementById("loading").style.display = "block";
+  }
+
+  // Function to hide the loading GIF
+  function hideLoading() {
+    document.getElementById("loading").style.display = "none";
+  }
+
+  // Check if the user is already logged in
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // User is already logged in, redirect to user.html
+      window.location.href = "./user.html";
+    } else {
+      // User is not logged in, show the sign-in popup
+      showLoading(); // Show the loading GIF while the sign-in process is ongoing
+
+      // Sign in with Google provider
+      var provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithPopup(provider)
+        .then((result) => {
+          // Hide the loading GIF after the sign-in process is complete
+          hideLoading();
+
+          var credential = result.credential;
+          var token = credential.accessToken;
+          var user = result.user;
   
-  .then((result) => {
-    var credential = result.credential;
-    var token = credential.accessToken;
-    var user = result.user;
-    // Redirect to user.html
-   
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    var email = error.email;
-    var credential = error.credential;
-    // Handle errors
-    console.error("Google login error:", errorCode, errorMessage);
+
+          // Redirect to user.html
+          window.location.href = "./user.html";
+        })
+        .catch((error) => {
+          // Hide the loading GIF if there was an error during the sign-in process
+          hideLoading();
+
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          var email = error.email;
+          var credential = error.credential;
+
+          // Handle errors
+          console.error("Google login error:", errorCode, errorMessage);
+        });
+    }
   });
 </script>
 
