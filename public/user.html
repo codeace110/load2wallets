@@ -37,25 +37,23 @@
   <link rel="stylesheet" href="lib/noty/noty.css">
   <link rel="stylesheet" href="lib/noty/nest.css">
   <style type="text/css">
-    #user-div {
-      display: none
-    }
-
-    #login-div {
-      display: none
-    }
-
-    #registration-div {
-      display: none
-    }
-
-    #send-verification-div {
-      display: none
-    }
+ 
   </style>
 </head>
 
 <body>
+  <div class="row" id="user-div">
+    <div class="user-dashboard">
+      <div class="grid-row">
+        <div class="grid-cell">
+          <h1>Welcome!</h1> 
+          <p>You are currently logged in as <span id="user_para"><h1id="user_para"></h1></span>.</p>
+        </div>
+      </div>
+      <a class="button shift" href="#open-modal">Settings</a>
+      <a class="button shift" onclick="logout()">Logout</a>
+    </div>
+  </div>
   
 </body>
 
@@ -83,7 +81,6 @@
 <script type="text/javascript" src="./js/notification.js"></script>
 <script type="text/javascript" src="./js/logout.js"></script>
 
-<script type="text/javascript" src="./js/ballon.js"></script>
 
 <script>
   function registerServiceWorker() {
