@@ -1,4 +1,3 @@
-
 function registration() {
   console.log('Attempting to register user ...')
   var user_email = document.getElementById("user_email").value;
@@ -13,9 +12,12 @@ function registration() {
   }
 }
 
-function myFunction_reload() {
-  // Show the login container
-  document.getElementById("registration-div").style.display = "none";
-  document.getElementById("send-verification-div").style.display = "none";
-  document.getElementById("login-div").style.display = "block";
+// Function to handle registration when Enter key is pressed
+function handleRegistrationKeyPress(event) {
+  if (event.key === 'Enter') {
+    registration();
+  }
 }
+
+// Add event listener to the confirm password field
+document.getElementById("confirm_password").addEventListener("keydown", handleRegistrationKeyPress);

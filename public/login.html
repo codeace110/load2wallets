@@ -120,7 +120,7 @@
           Login With
           <div class="row container social-container">
             <div class="col-md-6 social-btn">
-              <a href="" onclick="loginWithGoogle()"><img class="facebook-ico shift"   src="img/load2wallet (1).png" alt=""></a>
+              <a onclick="loginWithGoogle()"><img class="facebook-ico shift" src="img/load2wallet (1).png" alt=""></a>
             </div>
             <div class="col-md-6 social-btn">
               <a href=""><img class="facebook-ico" src="img/load2wallet.png" alt=""></a>
@@ -134,7 +134,7 @@
       </div>
     </div>
     <div class="clearfix"></div>
-    <!-- <div class="row" id="user-div">
+    <div class="row" id="user-div">
       <div class="user-dashboard">
         <div class="grid-row">
           <div class="grid-cell">
@@ -145,7 +145,7 @@
         <a class="button shift" href="#open-modal">Settings</a>
         <a class="button shift" onclick="logout()">Logout</a>
       </div>
-    </div> -->
+    </div>
     <div id="open-modal" class="modal-window">
       <div>
         <div class="login-box">
@@ -194,38 +194,6 @@
 <script type="text/javascript" src="./js/sendVerification.js"></script>
 <script type="text/javascript" src="./js/authState.js"></script>
 <script type="text/javascript" src="./js/ballon.js"></script>
-
-<script>
-  // Function to show the loading GIF
-  function showLoading() {
-    document.getElementById("loading").style.display = "block";
-  }
-
-  // Function to hide the loading GIF
-  function hideLoading() {
-    document.getElementById("loading").style.display = "none";
-  }
-
-  // Check if the user is already logged in
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      // User is already logged in, redirect to user.html
-      window.location.href = "./login.html";
-    } else {
-      // User is not logged in, show the sign-in options
-      showLoading(); // Show the loading GIF while the sign-in process is ongoing
-
-      // Allow user to choose their account
-      var provider = new firebase.auth.GoogleAuthProvider();
-      provider.setCustomParameters({ prompt: 'select_account' }); // Prompt user to choose account
-      firebase.auth().signInWithRedirect(provider); // Redirect to sign-in page
-      window.location.href = "./user` n  .html";
-
-      // After the user chooses their account and signs in, the code will continue execution in user.html
-    }
-  });
-</script>
-
 
  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
  <script>
