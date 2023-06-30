@@ -195,35 +195,35 @@
 <script type="text/javascript" src="./js/authState.js"></script>
 <script type="text/javascript" src="./js/ballon.js"></script>
 
-
-<!---Google signin v2-->
 <script>
-
-function showLoading() {
+  // Function to show the loading GIF
+  function showLoading() {
     document.getElementById("loading").style.display = "block";
-
   }
 
-
-
+  // Function to hide the loading GIF
   function hideLoading() {
     document.getElementById("loading").style.display = "none";
   }
 
-
+  // Check if the user is already logged in
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      window.location.href = "./user.html";
+      // User is already logged in, redirect to user.html
+      window.location.href = "./login.html";
     } else {
-      showLoading(); 
+      // User is not logged in, show the sign-in options
+      showLoading(); // Show the loading GIF while the sign-in process is ongoing
 
+      // Allow user to choose their account
       var provider = new firebase.auth.GoogleAuthProvider();
-      provider.setCustomParameters({ prompt: 'select_account' }); 
-      firebase.auth().signInWithRedirect(provider); 
+      provider.setCustomParameters({ prompt: 'select_account' }); // Prompt user to choose account
+      firebase.auth().signInWithRedirect(provider); // Redirect to sign-in page
+      window.location.href = "./user` n  .html";
 
+      // After the user chooses their account and signs in, the code will continue execution in user.html
     }
   });
-
 </script>
 
 
